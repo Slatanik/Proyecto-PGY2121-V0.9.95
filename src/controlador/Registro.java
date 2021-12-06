@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import modelo.Libro;
+import modelo.Usuario;
 
 /**
  *
@@ -207,4 +208,30 @@ public class Registro {
         }
         return libro;
     }
+     public Libro Contar(int precio){
+         Libro libro = new Libro();
+     
+        try{
+            Conexion conexion1 = new Conexion();
+            Connection cnx = conexion1.obtenerConexion();
+            
+            String query ="select count(precio) from libro";
+            PreparedStatement stmt = cnx.prepareStatement(query);
+            stmt.setInt(1,precio);
+            ResultSet rs = stmt.executeQuery();
+             if (rs.next()) {              
+                libro.setPrecio(rs.getInt("precio"));
+             
+            }              
+
+            rs.close();
+            stmt.close();
+            cnx.close();
+        } catch (SQLException e) {
+            System.out.println("Error SQL al listar libro por id" + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("Error al listar libro por id" + e.getMessage());
+        }
+        return libro;
+     }
 }

@@ -37,45 +37,46 @@ public class Menu extends javax.swing.JFrame {
         jMIListar = new javax.swing.JMenuItem();
         EliminarP = new javax.swing.JMenuItem();
         ActualizarR = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
         jMISalir = new javax.swing.JMenuItem();
         jMenuAyuda = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Librería");
 
-        jPanel1.setBackground(new java.awt.Color(0, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(102, 153, 255));
+        jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 255), 9, true));
 
-        jLabel1.setFont(new java.awt.Font("Rockwell Extra Bold", 1, 48)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 3, 55)); // NOI18N
         jLabel1.setText("Sistema de gestión de pacientes");
 
         jLabel2.setText(" ");
 
-        jLabel3.setFont(new java.awt.Font("MV Boli", 0, 48)); // NOI18N
-        jLabel3.setText("The Progamming Wolves");
+        jLabel3.setFont(new java.awt.Font("MV Boli", 0, 24)); // NOI18N
+        jLabel3.setText("The Progamming Wolves les desea un muy buen dia uwur");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jLabel2)
-                .addContainerGap(1265, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 1231, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addComponent(jLabel2))
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 664, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 905, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(188, 188, 188)
+                .addComponent(jLabel3)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(368, 368, 368)
                 .addComponent(jLabel2)
-                .addGap(145, 145, 145)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(290, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jMenuBar1.setMaximumSize(new java.awt.Dimension(500, 32769));
@@ -119,6 +120,15 @@ public class Menu extends javax.swing.JFrame {
         });
         jMenuLibro.add(ActualizarR);
 
+        jMenuItem1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jMenuItem1.setText("Reporte");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenuLibro.add(jMenuItem1);
+
         jMISalir.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jMISalir.setText("Salir");
         jMISalir.addActionListener(new java.awt.event.ActionListener() {
@@ -140,43 +150,44 @@ public class Menu extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItemAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAgregarActionPerformed
-        Agregar agrega = new Agregar();
-        agrega.setVisible(true);
-    }//GEN-LAST:event_jMenuItemAgregarActionPerformed
+    private void jMISalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMISalirActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jMISalirActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        Reporte report = new Reporte();
+        report.setVisible(true);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void ActualizarRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActualizarRActionPerformed
+        Actualizar act = new Actualizar();
+        act.setVisible(true);
+    }//GEN-LAST:event_ActualizarRActionPerformed
+
+    private void EliminarPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarPActionPerformed
+        Eliminar eliminar = new Eliminar();
+        eliminar.setVisible(true);
+    }//GEN-LAST:event_EliminarPActionPerformed
 
     private void jMIListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIListarActionPerformed
         Listar lista = new Listar();
         lista.setVisible(true);
     }//GEN-LAST:event_jMIListarActionPerformed
 
-    private void jMISalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMISalirActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_jMISalirActionPerformed
-
-    private void EliminarPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarPActionPerformed
-        Eliminar eliminar = new Eliminar();
-        eliminar.setVisible(true);       
-    }//GEN-LAST:event_EliminarPActionPerformed
-
-    private void ActualizarRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActualizarRActionPerformed
-        Actualizar act = new Actualizar();
-        act.setVisible(true);
-    }//GEN-LAST:event_ActualizarRActionPerformed
+    private void jMenuItemAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAgregarActionPerformed
+        Agregar agrega = new Agregar();
+        agrega.setVisible(true);
+    }//GEN-LAST:event_jMenuItemAgregarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -223,6 +234,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMISalir;
     private javax.swing.JMenu jMenuAyuda;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItemAgregar;
     private javax.swing.JMenu jMenuLibro;
     private javax.swing.JPanel jPanel1;
